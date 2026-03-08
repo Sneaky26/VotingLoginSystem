@@ -1,24 +1,31 @@
 
-let voterinfo = {};
+let voterList = [];
 
 function signupInfo(){
-voterinfo.voterid = String(document.getElementById("signupid").value);
-voterinfo.username = String(document.getElementById("signupuser").value);
-voterinfo.password = String(document.getElementById("signuppassword").value);
-console.log(voterinfo);
+let voter = {
+        voterid: String(document.getElementById("signupid").value),
+        username: String(document.getElementById("signupuser").value),
+        password: String(document.getElementById("signuppassword").value)
+    }
+    voterList.push(voter);
+    console.log(voterList);
 }
 function checkPassword(){
-let voterid = String(document.getElementById("loginid").value);
-let username = String(document.getElementById("loginuser").value);
-let password = String(document.getElementById("loginpassword").value);
+    let voterid = String(document.getElementById("loginid").value);
+    let username = String(document.getElementById("loginuser").value);
+    let password = String(document.getElementById("loginpassword").value);
 
-if (voterid == voterinfo.voterid && 
-    username == voterinfo.username && 
-    password == voterinfo.password){
-      alert("Login Success Welcome " + voterinfo.username + "!! You are TRASH NIGGA");
+    let found = voterList.find(voter => 
+        voter.voterid == voterid && 
+        voter.username == username && 
+        voter.password == password
+    );
+
+    if (found){
+        alert("Login Success Welcome " + found.username + "!!");
     } else {
-        alert("WRONG PASSWORD NICKER STOP HACKING PUSSY NIGGA");
-    }
+        alert("WRONG PASSWORD");
+    }   
 
 }
 
