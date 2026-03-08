@@ -16,7 +16,7 @@
             <li><a href="mainLogin.php">Login</a></li>
             <li><a href="signup.php">Signup</a></li>
             <li><a href="retrieve.php">Table</a></li>
-            <li><a href="">PlaceHolder</a></li>
+            <li><a href="addminus.php">PlaceHolder</a></li>
         </ul>
     </nav>
     <main>
