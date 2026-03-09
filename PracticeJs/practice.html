@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="clock">this is clock</p>
+    <p class="hey">Message1</p>
+    <p class="hey">Message2</p>
+    <button onclick="clickcheng()">CLICK aa</button>
+    <button onclick="eventLes()" id="eventles">CLICK EVENT</button>
+    <input type="text" name="t1" id="t1">
+    <button type="button" id="additem">ADD ITEM aa</button> 
+    <ul id="list">list of aaa</ul>
+    <script>
+        setInterval (function() {
+            let time = new Date().toLocaleTimeString();
+            document.getElementById("clock").innerHTML = time;
+        }, 1000);
+
+        document.getElementById("additem").addEventListener("click",function(){
+            let item = document.getElementById("t1").value;
+            let time = new Date().toLocaleTimeString();
+            let li = document.createElement("li");
+            li.innerHTML = "aa: " + item + "  Time: "+ time;
+
+            const list = document.getElementById("list");
+            list.innerHTML = "";
+
+            document.getElementById("list").appendChild(li);
+            document.getElementById("t1").value = "";
+        } )
+        
+        function clickcheng(){
+            let msg = document.querySelectorAll(".hey");
+            for (let i=0;i<msg.length;i++){
+                msg[i].style.color = "green";
+                msg[i].style.backgroundColor = "pink";
+            }
+            let p = document.createElement("p");
+            p.innerHTML = "BABYGIRL";
+            document.body.appendChild(p);
+        }
+
+        //document.getElementById("eventles").addEventListener("click",() => alert("nigga you click my  me!"));
+        //document.getElementById("eventles").addEventListener("mouseover",() => alert("nigga you hoverme me!"));
+        //document.getElementById("eventles").addEventListener("mouseout",() => alert("nigga you LEFTME me!"));
+        document.getElementById("eventles").addEventListener("mousedown",() => alert("nigga you CLICK ME me!"));
+    </script>
+</body>
+</html>
