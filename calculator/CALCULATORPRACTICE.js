@@ -90,8 +90,8 @@ function memSeyb(){
 }
 function memPlus(){
     uppervalue = Number(document.getElementById("display1").value);
-    memplusbaby = memsavebaby + uppervalue ;
-    document.getElementById("display2").value = memplusbaby;
+    memsavebaby = memsavebaby + uppervalue ;
+    document.getElementById("display2").value = memsavebaby;
 }
 function memRetrieve(){
     memretrieve = Number(document.getElementById("display2").value);
@@ -99,4 +99,13 @@ function memRetrieve(){
 }
 function memClear(){
     document.getElementById("display2").value = "";
+}
+function backoff(){
+    let backoffsh = document.getElementById("display1").value;
+    let fullsh = "";
+    console.log("it works?");
+    for (let i = 0; i < backoffsh.length-1 ; i++){
+        fullsh += backoffsh.charAt(i);
+    }
+    document.getElementById("display1").value = fullsh;
 }
