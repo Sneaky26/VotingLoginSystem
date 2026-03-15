@@ -65,9 +65,9 @@ function displayOutput(){
         if (operator === '+') { 	
             result += num3;
         } else if (operator === '-') { 
-        result -= num3;
+            result -= num3;
         } else if (operator === '*') { 
-        result *= num3;
+            result *= num3;
         } else if (operator === '/') { 
             result /= num3;
         } 
