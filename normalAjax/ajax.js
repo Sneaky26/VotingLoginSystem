@@ -4,7 +4,6 @@ function fetchData(){
 
         const formData = new FormData(this);
         
-        // ✅ Use full path from root
         fetch("process.php", {
             method: "POST",
             body: formData
