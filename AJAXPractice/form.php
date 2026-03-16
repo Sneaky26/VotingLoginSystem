@@ -21,7 +21,7 @@
         function loadData(){
             $.ajax({
                 url: "retrieve.php",
-                type: "GET",  
+                type: "POST",  
                 success: function(data){
                     $("#result").html(data); 
                 }
@@ -31,10 +31,11 @@
         $("#insertA").click(function(){
             let name1 = $("#name").val();
             let email1 = $("#email").val();
+            
             $.ajax({
                 url: "insert.php",
                 type: "POST",
-                data: { name: name1, email: email1 },
+                data: {name: name1, email: email1},
                 success: function(data){
                     alert(data);
                     loadData();
